@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hệ thống Quản lý sản phẩm khoa học</title>
+  <title>Hệ thống Quản lý Khoa học - Trường Đại học Tân Trào</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -14,18 +14,28 @@
     header {
       background-color: #0b5394;
       color: white;
-      padding: 15px 30px;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+    header .left {
+      display: flex;
+      align-items: center;
+    }
+    header img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
     header h1 {
       margin: 0;
-      font-size: 22px;
+      font-size: 20px;
       text-transform: uppercase;
     }
     header span {
-      font-size: 14px;
+      font-size: 13px;
       opacity: 0.9;
     }
     nav.tabs {
@@ -49,27 +59,20 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       border-radius: 8px;
     }
-    .section {
-      display: none;
-    }
-    .section.active {
-      display: block;
-    }
+    .section { display: none; }
+    .section.active { display: block; }
     h2 {
       color: #0b5394;
       border-bottom: 2px solid #3c78d8;
       padding-bottom: 5px;
     }
-    .input-group {
-      margin: 12px 0;
-    }
+    .input-group { margin: 12px 0; }
     .input-group label {
       display: block;
       font-weight: bold;
       margin-bottom: 4px;
     }
-    .input-group input,
-    .input-group select {
+    .input-group input, .input-group select {
       width: 100%;
       padding: 8px;
       border: 1px solid #ccc;
@@ -84,15 +87,7 @@
       cursor: pointer;
       margin-top: 10px;
     }
-    .btn:hover {
-      background-color: #3c78d8;
-    }
-    .highlight {
-      background-color: #e7f3ff;
-      border-left: 4px solid #3c78d8;
-      padding: 10px 15px;
-      margin: 15px 0;
-    }
+    .btn:hover { background-color: #3c78d8; }
     footer {
       background-color: #e2e8f0;
       text-align: center;
@@ -105,7 +100,10 @@
 </head>
 <body>
   <header>
-    <h1>HỆ THỐNG QUẢN LÝ SẢN PHẨM KHOA HỌC</h1>
+    <div class="left">
+      <img src="Logo-Dai-Hoc-Tan-Trao-300x300.webp" alt="Logo Trường Đại học Tân Trào" />
+      <h1>HỆ THỐNG QUẢN LÝ KHOA HỌC<br><span>Trường Đại học Tân Trào</span></h1>
+    </div>
     <span>Phiên bản hướng dẫn</span>
   </header>
 
@@ -118,124 +116,29 @@
   </nav>
 
   <main>
-    <!-- TAB 1 -->
     <section id="tab1" class="section active">
       <h2>Đề tài nghiên cứu</h2>
-      <p>Vui lòng nhập đầy đủ thông tin về đề tài nghiên cứu:</p>
-      <div class="input-group">
-        <label>Tên đề tài</label>
-        <input type="text" placeholder="Nhập tên đề tài..." />
-      </div>
-      <div class="input-group">
-        <label>Loại đề tài</label>
-        <select>
-          <option>-- Chọn loại đề tài --</option>
-          <option>Đề tài cấp trường</option>
-          <option>Đề tài cấp tỉnh</option>
-          <option>Đề tài cấp Bộ</option>
-        </select>
-      </div>
-      <div class="input-group">
-        <label>Danh sách thành viên</label>
-        <input type="text" placeholder="Nguyễn Văn A, Trần Thị B..." />
-      </div>
-      <div class="input-group">
-        <label>Số giờ quy đổi</label>
-        <input type="number" placeholder="Nhập số giờ..." />
-      </div>
-      <div class="input-group">
-        <label>File minh chứng</label>
-        <input type="file" />
-      </div>
+      <div class="input-group"><label>Tên đề tài</label><input type="text" placeholder="Nhập tên đề tài..." /></div>
+      <div class="input-group"><label>Loại đề tài</label><select><option>-- Chọn loại đề tài --</option><option>Đề tài cấp trường</option><option>Đề tài cấp tỉnh</option><option>Đề tài cấp Bộ</option></select></div>
+      <div class="input-group"><label>Danh sách thành viên</label><input type="text" placeholder="Nguyễn Văn A, Trần Thị B..." /></div>
+      <div class="input-group"><label>Số giờ quy đổi</label><input type="number" placeholder="Nhập số giờ..." /></div>
+      <div class="input-group"><label>File minh chứng</label><input type="file" /></div>
       <button class="btn">Lưu thông tin</button>
     </section>
 
-    <!-- TAB 2 -->
-    <section id="tab2" class="section">
-      <h2>Bài báo khoa học</h2>
-      <p>Nhập thông tin bài báo, báo cáo khoa học:</p>
-      <div class="input-group">
-        <label>Tên bài báo</label>
-        <input type="text" placeholder="Nhập tên bài báo..." />
-      </div>
-      <div class="input-group">
-        <label>Tạp chí / Hội nghị</label>
-        <input type="text" placeholder="Tên tạp chí hoặc hội nghị..." />
-      </div>
-      <div class="input-group">
-        <label>DOI / ISSN</label>
-        <input type="text" placeholder="Nhập DOI hoặc ISSN..." />
-      </div>
-      <div class="input-group">
-        <label>File minh chứng (.pdf)</label>
-        <input type="file" />
-      </div>
-      <button class="btn">Lưu thông tin</button>
-    </section>
-
-    <!-- TAB 3 -->
-    <section id="tab3" class="section">
-      <h2>Sách / Giáo trình</h2>
-      <p>Thông tin về sách, giáo trình hoặc tài liệu học tập.</p>
-      <div class="input-group">
-        <label>Tên sách / giáo trình</label>
-        <input type="text" placeholder="Nhập tên sách..." />
-      </div>
-      <div class="input-group">
-        <label>Nhà xuất bản</label>
-        <input type="text" placeholder="Nhập tên NXB..." />
-      </div>
-      <div class="input-group">
-        <label>Minh chứng (.pdf)</label>
-        <input type="file" />
-      </div>
-      <button class="btn">Lưu thông tin</button>
-    </section>
-
-    <!-- TAB 4 -->
-    <section id="tab4" class="section">
-      <h2>Hướng dẫn sinh viên</h2>
-      <p>Nhập thông tin sinh viên và đề tài hướng dẫn:</p>
-      <div class="input-group">
-        <label>Tên sinh viên</label>
-        <input type="text" placeholder="Nhập tên sinh viên..." />
-      </div>
-      <div class="input-group">
-        <label>Tên đề tài</label>
-        <input type="text" placeholder="Nhập tên đề tài..." />
-      </div>
-      <div class="input-group">
-        <label>File minh chứng (.pdf)</label>
-        <input type="file" />
-      </div>
-      <button class="btn">Lưu thông tin</button>
-    </section>
-
-    <!-- TAB 5 -->
-    <section id="tab5" class="section">
-      <h2>Giải thưởng / Sáng kiến</h2>
-      <p>Nhập thông tin về giải thưởng hoặc sáng kiến:</p>
-      <div class="input-group">
-        <label>Tên giải thưởng / sáng kiến</label>
-        <input type="text" placeholder="Nhập tên..." />
-      </div>
-      <div class="input-group">
-        <label>File minh chứng (.pdf)</label>
-        <input type="file" />
-      </div>
-      <button class="btn">Lưu thông tin</button>
-    </section>
+    <section id="tab2" class="section"><h2>Bài báo khoa học</h2><p>Nhập thông tin bài báo hoặc báo cáo khoa học.</p></section>
+    <section id="tab3" class="section"><h2>Sách / Giáo trình</h2><p>Thông tin về sách, giáo trình hoặc tài liệu học tập.</p></section>
+    <section id="tab4" class="section"><h2>Hướng dẫn sinh viên</h2><p>Nhập thông tin sinh viên và đề tài hướng dẫn.</p></section>
+    <section id="tab5" class="section"><h2>Giải thưởng / Sáng kiến</h2><p>Nhập thông tin về giải thưởng hoặc sáng kiến.</p></section>
   </main>
 
   <footer>
-    © 2025 - Hệ thống Quản lý Khoa học | Phiên bản hướng dẫn sử dụng
+    © 2025 - Trường Đại học Tân Trào | Hệ thống Quản lý Khoa học
   </footer>
 
   <script>
-    // Chuyển tab
     const tabs = document.querySelectorAll("nav.tabs a");
     const sections = document.querySelectorAll("section.section");
-
     tabs.forEach(tab => {
       tab.addEventListener("click", e => {
         e.preventDefault();
